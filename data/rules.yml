@@ -1,13 +1,11 @@
 version: "2.0"
-
 rules:
-
-- rule: Say goodbye anytime the user says goodbye
+- rule: Verabschiede und beende dich, jedes mal wenn der Nutzer ein Abbruch wünscht
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
-
-- rule: Say 'I am a bot' anytime the user challenges
+  - intent: abbruch
+  - action: utter_verabschiedung
+  - action: action_restart
+- rule: Test custom action
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: wiederholung
+  - action: action_hello_world

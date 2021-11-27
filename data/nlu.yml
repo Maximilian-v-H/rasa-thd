@@ -1,107 +1,118 @@
 version: "2.0"
 nlu:
-- intent: greet
+- intent: begrueßung
   examples: |
     - hey
-    - hello
+    - hallo
     - hi
-    - hello there
-    - good morning
-    - good evening
+    - halli hallo
+    - guten morgen
+    - guten abend
     - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-    - Hi
-- intent: goodbye
+    - servus
+    - guten mittag
+- intent: begrueßung_name
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
+    - hallo ich heiße [herbert](name)
+    - hallo ich heiße [fred](name)
+    - hallo ich heiße [Till](name)
+    - hey ich bin [Phillip](name)
+    - hey mein name ist [herbert](name)
+    - hey ich bin [max](name)
+    - hey ich bin [hannes](name)
+    - guten tag ich bin [herbert](name)
+    - guten tag ich bin [rosalie](name)
+    - guten tag ich heiße [melanie](name)
+- intent: verabschiedung
+  examples: |
+    - by
     - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-- intent: affirm
+    - tschau
+    - servus
+    - auf wiedersehen
+    - tschüss
+    - bis später peter
+    - bis später
+    - hau rein
+    - machs gut
+    - Auf wiedersehen.
+- intent: bestaetigung
   examples: |
+    - ja
     - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-- intent: deny
+    - yeah
+    - auf jeden fall
+    - das klingt gut
+    - korrekt
+    - das ist richtig
+    - bestätigen
+    - machen wir so
+    - passt
+    - mhm
+    - okay danke
+    - okay
+- intent: negation
   examples: |
+    - nein
     - no
-    - n
     - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-- intent: mood_great
+    - niemals
+    - nichts
+    - nie
+    - nada
+    - niente
+    - auf kein fall
+    - das gefällt mir nicht
+    - das mag ich nicht
+    - andere
+    - kein interesse
+    - neuanfang
+    - anderer studiengang
+    - umentschieden
+- intent: abbruch
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-    - I am [great](happy)
-- intent: mood_unhappy
+    - stopp
+    - bitte hör auf
+    - halt dein mund
+    - sei leise
+    - ruhe
+- intent: wiederholung
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-- intent: bot_challenge
+    - wiederhol es
+    - nochmal sagen
+    - wie bitte
+    - nicht verstanden
+    - erneut
+- intent: witz
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-- intent: name_entry
+    - erzähl mir ein witz
+    - bring mich zum lachen
+    - sag was lustiges
+- intent: allgemein
   examples: |
-    - my name is [Christina](name)
-    - my name is [Peter](name)
-    - my name is [Klaus](name)
-    - name is [Hans](name)
-    - name is [Marlene](name)
-    - I am [christina](name)
-    - I am [hans](name)
-    - I'm [peter](name)
-    - I am [Caroline](name)
-    - I am [Herbert](name)
-- intent: country_entry
+    - Ich suche nach einem passenden Studiengang für mich.
+    - Ich suche nach einem [Bachelor](abschluss) Studiengang.
+    - Ich würde mich gerne zu den [Master](abschluss) Studiengängen der THD informieren.
+    - Welche Studiengänge gibt es den an der Hochschule?
+    - Welche Auswahl an Studiengängen gibt es den?
+- intent: studienrichtung
   examples: |
-    - I am from [Germany](country)
-    - I am from [US](country)
-    - I am from [UK](country)
-    - I am from [France](country)
-    - I am from [Italy](country)
-    - I am from [Spain](country)
+    - Ich suche einen Studiengang der was mit [Finanzen](studienrichtung) zu tun hat.
+    - Ich würde gerne was mit [Finanzen](studienrichtung) studieren.
+    - Ich würde gerne etwas mit [Finanzen]{"entity": "studienrichtung", "value": "Wirtschaftswissenschaften"} studieren.
+    - Ich möchte etwas in [Informatik ]("entity": "studienrichtung", "value": "Informatik)studieren.
+    - Ich möchte etwas in der Studienrichtung [Maschinenbau und Mechatronik]("entity": "studienrichtung", "value": "Maschinenbau und Mechatronik") studieren.
+    - Mich interessiert [Gesundheitswissenschaften]("entity": "studienrichtung", "value": Gesundheitswissenschaften").
+- intent: studiengang
+  examples: |
+    - Erzähl mir mehr über den Studiengang [Wirtschaftsinformatik](studiengang)
+    - Erzähl mir doch was über den Studiengang [Maschinenbau](studiengang)
+    - Ich würde gerne mehr über [Cyber Security](studiengang) erfahren.
+    - [Energy Systems Engineering](studiengang) klingt sehr interessant.
+    - Was kannst du mir den über [Technisches Design](studiengang) sagen?
+- intent: info
+  examples: |
+    - Wie viele [Semester](info) studiert man den [Wirtschaftsinformatik](studiengang)?
+    - Was kann ich später damit [beruflich](info) machen?
+    - Welche Studiengänge könnte ich im [Anschluss](info) studieren?
+    - Welche [Vorraussetzungen](info) brauch ich überhaupt um das studieren zu können?
